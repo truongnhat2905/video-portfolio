@@ -296,7 +296,7 @@
       top: -60px;
       left: 0;
       width: 100%;
-      height: calc(100% + 60px);
+      height: calc(100% + 130px);
       border: none;
     }
     .vid-wrap iframe[data-type="drive"] {
@@ -497,19 +497,19 @@
           <div class="vid-row">
             <div class="vid-item">
               <div class="vid-wrap">
-                <video src="videos/Abera Eyelash Serum.mp4" controls preload="none" playsinline></video>
+                <video src="videos/Abera Eyelash Serum.mp4" controls preload="metadata" playsinline></video>
               </div>
               <div class="vid-label">Abera Eyelash Serum · 0:33</div>
             </div>
             <div class="vid-item">
               <div class="vid-wrap">
-                <video src="videos/Showreel 1.mp4" controls preload="none" playsinline></video>
+                <video src="videos/Showreel 1.mp4" controls preload="metadata" playsinline></video>
               </div>
               <div class="vid-label">Wireframe → Final Render · 0:10</div>
             </div>
             <div class="vid-item">
               <div class="vid-wrap">
-                <video src="videos/Showreel 2.mp4" controls preload="none" playsinline></video>
+                <video src="videos/Showreel 2.mp4" controls preload="metadata" playsinline></video>
               </div>
               <div class="vid-label">Wireframe → Final Render · 0:12</div>
             </div>
@@ -627,6 +627,10 @@
       });
     }, { rootMargin: '300px' });
     document.querySelectorAll('iframe[data-src]').forEach(function (f) { io.observe(f); });
+    // Show first frame of local videos as thumbnail
+    document.querySelectorAll('video[preload="metadata"]').forEach(function (v) {
+      v.addEventListener('loadedmetadata', function () { v.currentTime = 0.001; });
+    });
   </script>
 
 </body>
