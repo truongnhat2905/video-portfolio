@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CV — Nguyễn Nhật Trường · AI Video Specialist</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    @page {
+      size: A4;
+      margin: 0
+    }
+
+    @media print {
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important
+      }
+
+      .hint {
+        display: none !important
+      }
+
+      body {
+        padding-top: 0 !important;
+        margin-top: 0 !important;
+        background: #fff !important;
+      }
+
+      .page {
+        margin: 0 !important;
+        padding: 11mm 14mm 8mm !important;
+      }
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background: #f0f0f0;
+      color: #1A1A1A;
+      font-size: 9pt;
+      line-height: 1.65;
+    }
+
+    .hint {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #064E3B;
+      color: #fff;
+      text-align: center;
+      padding: 8px;
+      font-size: 11px;
+      z-index: 999;
+    }
+
+    .hint strong {
+      color: #6EE7B7
+    }
+
+    body {
+      padding-top: 42px
+    }
+
+    /* ── PAGE ── */
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background: #fff;
+      margin: 0 auto;
+      padding: 11mm 14mm 8mm;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      display: flex;
+      align-items: stretch;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .photo-wrap {
+      width: 116px;
+      flex-shrink: 0;
+      border-radius: 6px;
+      border: 2px solid #10B981;
+      overflow: hidden;
+    }
+
+    .photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 10%;
+      display: block;
+      transform: scale(1.55);
+      transform-origin: center 20%;
+    }
+
+    .hinfo {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hinfo-top {
+      padding-bottom: 7px;
+      border-bottom: 1px solid #E5E7EB;
+      margin-bottom: 7px;
+    }
+
+    .hinfo-body {
+      font-size: 8.5pt;
+      color: #374151;
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .name {
+      font-size: 18pt;
+      font-weight: 700;
+      color: #0F172A;
+      letter-spacing: -.5px;
+      line-height: 1;
+    }
+
+    .role {
+      font-size: 9pt;
+      color: #10B981;
+      font-weight: 600;
+      letter-spacing: .3px;
+      margin-top: 4px;
+    }
+
+    .divider {
+      height: 2px;
+      background: linear-gradient(90deg, #10B981 0%, #6EE7B7 55%, transparent 100%);
+      margin-bottom: 20px;
+    }
+
+    /* ── BODY 2-COL ── */
+    .body {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 56mm;
+      gap: 0 10mm;
+    }
+
+    /* ── SECTION ── */
+    .sec {
+      margin-bottom: 14px
+    }
+
+    .sec-title {
+      font-size: 7pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: #10B981;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #E5E7EB;
+      margin-bottom: 10px;
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp-item {
+      margin-bottom: 13px
+    }
+
+    .exp-item:last-child {
+      margin-bottom: 0
+    }
+
+    .exp-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 4mm
+    }
+
+    .exp-title {
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: #0F172A
+    }
+
+    .exp-period {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      font-size: 7pt;
+      color: #9CA3AF;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .exp-co {
+      font-size: 8pt;
+      color: #6B7280;
+      margin-top: 1px
+    }
+
+    .exp-ul {
+      list-style: none;
+      margin-top: 7px;
+      padding-left: 0
+    }
+
+    .exp-ul li {
+      font-size: 8.5pt;
+      color: #374151;
+      margin-bottom: 5px;
+      padding-left: 11px;
+      position: relative;
+      line-height: 1.55;
+    }
+
+    .exp-ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #D1D5DB;
+      font-size: 8pt;
+    }
+
+    /* ── PROJECT ITEM ── */
+    .proj-item {
+      margin-bottom: 12px;
+      padding: 7px 9px;
+      background: #F8FAFC;
+      border: 1px solid #E5E7EB;
+      border-left: 3px solid #10B981;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .proj-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .proj-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 4mm;
+    }
+
+    .proj-title {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #0F172A;
+    }
+
+    .proj-period {
+      font-size: 7pt;
+      color: #9CA3AF;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .proj-desc {
+      font-size: 8pt;
+      color: #374151;
+      margin-top: 3px;
+      line-height: 1.5;
+    }
+
+    .proj-tags {
+      margin-top: 5px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .proj-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 6.5pt;
+      color: #6B7280;
+      background: #F1F5F9;
+      border: 1px solid #E2E8F0;
+      border-radius: 3px;
+      padding: 1px 5px;
+    }
+
+    .metric {
+      font-weight: 600;
+      color: #0F172A;
+    }
+
+    /* ── RIGHT ── */
+    .right {
+      border-left: 1px solid #F3F4F6;
+      padding-left: 6mm
+    }
+
+    /* skills list */
+    .eq-item {
+      font-size: 8.5pt;
+      color: #374151;
+      padding-left: 11px;
+      position: relative;
+      margin-bottom: 5px;
+      line-height: 1.55;
+    }
+
+    .eq-item::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: #D1D5DB;
+      font-size: 8pt
+    }
+
+    /* education */
+    .edu-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 4mm;
+    }
+
+    .edu-name {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #0F172A
+    }
+
+    .edu-year {
+      font-size: 7pt;
+      color: #9CA3AF;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .edu-sub {
+      font-size: 8pt;
+      color: #6B7280;
+      margin-top: 1px
+    }
+
+    .edu-note {
+      font-size: 7pt;
+      color: #10B981;
+      margin-top: 2px;
+    }
+
+    .edu-divider {
+      height: 1px;
+      background: #F3F4F6;
+      margin: 10px 0;
+    }
+
+    .edu-sublabel {
+      font-size: 6.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #9CA3AF;
+      margin-bottom: 5px;
+    }
+
+    /* contact */
+    .ci {
+      font-size: 8pt;
+      color: #374151;
+      margin-bottom: 4px;
+      line-height: 1.5;
+    }
+
+    .ci-key {
+      font-size: 6.5pt;
+      color: #9CA3AF;
+      display: block;
+      margin-bottom: 1px;
+    }
+
+    .ci a {
+      color: #10B981;
+      text-decoration: none
+    }
+
+    /* stat inline badges */
+    .stat-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .stat-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7pt;
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      color: #065F46;
+      padding: 2px 7px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="hint">📄 CV 1 trang A4 — <strong>Ctrl+P</strong> → Save as PDF → Margins: <strong>None</strong></div>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="photo-wrap">
+        <img class="photo" src="docs/AVT.jpg" alt="Nguyễn Nhật Trường">
+      </div>
+      <div class="hinfo">
+        <div class="hinfo-top">
+          <div class="name">Nguyễn Nhật Trường</div>
+          <div class="role">AI Video Specialist</div>
+        </div>
+        <div class="hinfo-body">
+          Em có hơn 3 năm kinh nghiệm là Video Editor trong ngành mỹ phẩm, bắt đầu nghiên cứu và dịch chuyển sang AI
+          Video từ 05/2025.
+
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- BODY -->
+    <div class="body">
+
+      <!-- LEFT -->
+      <div class="left">
+
+        <!-- KINH NGHIỆM -->
+        <div class="sec">
+          <div class="sec-title">Kinh nghiệm</div>
+
+          <div class="exp-item">
+            <div class="exp-top">
+              <div class="exp-title">AI Video / Automation</div>
+              <div class="exp-period">08/2025 — Hiện tại</div>
+            </div>
+            <div class="exp-co">HV Holdings Global — BU Faca · TP.HCM</div>
+            <ul class="exp-ul">
+              <li>Sản xuất video quảng cáo hoàn toàn bằng AI (Veo 3, Kling, Nano Banana Pro) — từ ý tưởng, kịch bản,
+                hình ảnh đến video final.
+              </li>
+              <li>Xây dựng workflow automation kiểm duyệt chính sách của nền tảng cho kịch bản trước khi dựng.</li>
+              <li>Xây workflow automation đăng bài cross-platform (Facebook, TikTok) với n8n, giúp team tiết kiệm thời
+                gian thao tác thủ công.</li>
+              <li>Nghiên cứu và đánh giá AI tools mới để tích hợp vào quy trình sản xuất media của team.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-top">
+              <div class="exp-title">Video Editor</div>
+              <div class="exp-period">05/2023 — 08/2025</div>
+            </div>
+            <div class="exp-co">HV Holdings Global — BU Faca · TP.HCM</div>
+            <ul class="exp-ul">
+              <li>Dựng video quảng cáo sản phẩm (Social Ads, TVC, Motion Graphics Banner).</li>
+              <li>Lên kế hoạch, đi tiền trạm bối cảnh, setup thiết bị và điều phối buổi quay diễn viên.</li>
+              <li>Phối hợp với team content để đảm bảo video đúng brief và deadline.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-top">
+              <div class="exp-title">Freelance Video Editor</div>
+              <div class="exp-period">2022 — 2023</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- HỌC VẤN -->
+        <div class="sec">
+          <div class="sec-title">Học vấn</div>
+          <div class="edu-top">
+            <div class="edu-name">ĐH Tài nguyên &amp; Môi trường TP.HCM</div>
+            <div class="edu-year">2018 — 2022</div>
+          </div>
+          <div class="edu-sub">Công nghệ Thông tin</div>
+          <!-- <div class="edu-note">Luận văn AR — 9.0/10 · học bổng cuối kỳ</div> -->
+
+          <div class="edu-divider"></div>
+
+          <div class="sec-title">Khóa học bên ngoài</div>
+          <div class="edu-top">
+            <div class="edu-name">Agentic AI - WecommitAI</div>
+            <div class="edu-year">04/2026</div>
+          </div>
+          <div class="edu-sub">Học về cơ chế vận hành của Agentic AI và thiết kế các luồng hoạt động cho AI Agent</div>
+          <div class="edu-top" style="margin-top:6px">
+            <div class="edu-name">AI Content - Hai Nghiem Social</div>
+            <div class="edu-year">10/2025</div>
+          </div>
+          <div class="edu-sub">Học về quy trình Master Prompt để làm video AI.</div>
+        </div>
+
+      </div><!-- /left -->
+
+      <!-- RIGHT -->
+      <div class="right">
+
+        <!-- LIÊN HỆ -->
+        <div class="sec">
+          <div class="sec-title">Liên hệ</div>
+          <div class="ci"><span class="ci-key">Email</span>truongnhat2905@gmail.com</div>
+          <div class="ci"><span class="ci-key">Phone</span>0379 137 483</div>
+          <div class="ci"><span class="ci-key">Địa điểm</span>TP. Hồ Chí Minh</div>
+          <div class="ci"><span class="ci-key">Portfolio</span><a
+              href="https://truongnhat2905.github.io/video-portfolio/ai-video.html" target="_blank">link portfolio</a>
+          </div>
+        </div>
+
+        <!-- AI VIDEO TOOLS -->
+        <div class="sec">
+          <div class="sec-title">AI Tools</div>
+          <div class="eq-item">Veo 3/ Kling</div>
+          <div class="eq-item">Nano Banana Pro</div>
+          <div class="eq-item">ElevenLabs / Suno</div>
+          <div class="eq-item">n8n/ Make.com</div>
+          <!-- <div class="eq-item">Gemma 4 — local via LM Studio</div> -->
+        </div>
+
+        <!-- AUTOMATION -->
+        <!-- <div class="sec">
+          <div class="sec-title">Automation & Workflow</div>
+          <div class="eq-item">n8n</div>
+          <div class="eq-item">Make.com</div>
+          <div class="eq-item">Gemini 2.5 Pro</div>
+          <div class="eq-item">FFmpeg (post-processing)</div>
+          <div class="eq-item">Remotion</div>
+        </div> -->
+
+        <!-- PHẦN MỀM -->
+        <div class="sec">
+          <div class="sec-title">Phần mềm</div>
+          <div class="eq-item">Premiere Pro</div>
+          <div class="eq-item">After Effects</div>
+          <div class="eq-item">CapCut</div>
+          <div class="eq-item">Blender</div>
+        </div>
+
+
+      </div><!-- /right -->
+
+    </div><!-- /body -->
+
+  </div><!-- /page -->
+</body>
+
+</html>
