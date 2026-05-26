@@ -290,6 +290,26 @@
       padding: 3px 10px;
       border-radius: 4px;
     }
+
+    .lang-btn {
+      margin-left: 4px;
+      padding: 3px 12px;
+      border-radius: 99px;
+      background: transparent;
+      border: 1px solid #6EE7B7;
+      color: #6EE7B7;
+      font-family: inherit;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: .04em;
+      transition: background .15s;
+    }
+
+    .lang-btn:hover {
+      background: #6EE7B7;
+      color: #064E3B;
+    }
   </style>
 </head>
 
@@ -299,8 +319,9 @@
   <div class="hint">
     <span>Portfolio · <strong>Nguyễn Nhật Trường</strong></span>
     <span class="hint-dot">·</span>
-    <span>Video Editor · AI Video/ Automation · TP.HCM</span>
-    <a href="cv-ai-video.html" class="hint-cv">Xem CV</a>
+    <span data-vi="Video Editor · AI Video/ Automation · TP.HCM" data-en="Video Editor · AI Video / Automation · HCMC">Video Editor · AI Video/ Automation · TP.HCM</span>
+    <a href="CV-VideoEditor.html" class="hint-cv" data-vi="Xem CV" data-en="View CV">Xem CV</a>
+    <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
   </div>
 
   <!-- HEADER -->
@@ -365,8 +386,8 @@
 
       <div class="proj-footer">
         <ul class="bul">
-          <li>Lên ý tưởng -> Tạo kịch bản -> Tạo prompt ảnh và video -> Tạo ảnh -> Tạo video</li>
-          <li>Dựng video và chỉnh sửa màu sắc.</li>
+          <li data-vi="Lên ý tưởng -> Tạo kịch bản -> Tạo prompt ảnh và video -> Tạo ảnh -> Tạo video" data-en="Ideation → Script → Image & video prompts → Generate images → Generate video">Lên ý tưởng -> Tạo kịch bản -> Tạo prompt ảnh và video -> Tạo ảnh -> Tạo video</li>
+          <li data-vi="Dựng video và chỉnh sửa màu sắc." data-en="Edited final video and color graded.">Dựng video và chỉnh sửa màu sắc.</li>
         </ul>
         <div class="tool-row">
           <span class="tool">Veo 3</span>
@@ -421,8 +442,8 @@
 
       <div class="proj-footer">
         <ul class="bul">
-          <li>Modeling, bake textures, setup lighting, đi keyframe animation và render.</li>
-          <li>Dựng video kết hợp với nhịp nhạc.</li>
+          <li data-vi="Modeling, bake textures, setup lighting, đi keyframe animation và render." data-en="3D modeling, texture baking, lighting setup, keyframe animation and rendering.">Modeling, bake textures, setup lighting, đi keyframe animation và render.</li>
+          <li data-vi="Dựng video kết hợp với nhịp nhạc." data-en="Edited final video synced to music.">Dựng video kết hợp với nhịp nhạc.</li>
         </ul>
         <div class="tool-row">
           <span class="tool">Blender</span>
@@ -492,8 +513,8 @@
 
       <div class="proj-footer">
         <ul class="bul">
-          <li>Research và tổng hợp idea. </li>
-          <li>Keyframe animation sản phẩm và typography.</li>
+          <li data-vi="Research và tổng hợp idea." data-en="Researched and developed concepts.">Research và tổng hợp idea.</li>
+          <li data-vi="Keyframe animation sản phẩm và typography." data-en="Keyframe animation for product and typography.">Keyframe animation sản phẩm và typography.</li>
           <!-- <li>Sync chuyển động khớp nhịp nhạc, layout tối ưu CTR cho mobile scroll</li> -->
         </ul>
         <div class="tool-row">
@@ -569,8 +590,8 @@
 
       <div class="proj-footer">
         <ul class="bul">
-          <li>Lên kế hoạch quay, đi tiền trạm bối cảnh, điều phối diễn viên.</li>
-          <li>Dựng video theo brief từ contents, chỉnh màu, chỉnh âm thanh và thêm hiệu ứng.</li>
+          <li data-vi="Lên kế hoạch quay, đi tiền trạm bối cảnh, điều phối diễn viên." data-en="Planned shoots, scouted locations and coordinated talent on set.">Lên kế hoạch quay, đi tiền trạm bối cảnh, điều phối diễn viên.</li>
+          <li data-vi="Dựng video theo brief từ contents, chỉnh màu, chỉnh âm thanh và thêm hiệu ứng." data-en="Edited videos per content brief, color graded, mixed audio and added effects.">Dựng video theo brief từ contents, chỉnh màu, chỉnh âm thanh và thêm hiệu ứng.</li>
         </ul>
         <div class="tool-row">
           <span class="tool">Premiere Pro</span>
@@ -599,6 +620,17 @@
     document.querySelectorAll('video[preload="metadata"]').forEach(function (v) {
       v.addEventListener('loadedmetadata', function () { v.currentTime = 1.0; });
     });
+
+    // Language toggle
+    var lang = 'vi';
+    function toggleLang() {
+      lang = lang === 'vi' ? 'en' : 'vi';
+      var btn = document.getElementById('langBtn');
+      btn.textContent = lang === 'vi' ? 'EN' : 'VI';
+      document.querySelectorAll('[data-vi]').forEach(function (el) {
+        el.textContent = lang === 'vi' ? el.getAttribute('data-vi') : el.getAttribute('data-en');
+      });
+    }
   </script>
 
 </body>

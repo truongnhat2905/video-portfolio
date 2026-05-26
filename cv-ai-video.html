@@ -30,6 +30,10 @@
         display: none !important
       }
 
+      .lang-btn {
+        display: none !important
+      }
+
       body {
         padding-top: 0 !important;
         margin-top: 0 !important;
@@ -78,6 +82,30 @@
       padding: 11mm 14mm 8mm;
       display: flex;
       flex-direction: column;
+      position: relative;
+    }
+
+    /* ── LANG TOGGLE ── */
+    .lang-btn {
+      position: absolute;
+      top: 11mm;
+      right: 14mm;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 7pt;
+      font-weight: 600;
+      color: #10B981;
+      background: transparent;
+      border: 1px solid #10B981;
+      border-radius: 4px;
+      padding: 2px 9px;
+      cursor: pointer;
+      letter-spacing: .06em;
+      transition: background .15s, color .15s;
+    }
+
+    .lang-btn:hover {
+      background: #10B981;
+      color: #fff;
     }
 
     /* ── HEADER ── */
@@ -449,6 +477,11 @@
       .eq-item {
         font-size: 9.5pt;
       }
+
+      .lang-btn {
+        top: 16px;
+        right: 16px;
+      }
     }
   </style>
 </head>
@@ -467,13 +500,15 @@
           <div class="name">Nguyễn Nhật Trường</div>
           <div class="role">AI Video Specialist</div>
         </div>
-        <div class="hinfo-body">
-          Em có hơn 3 năm kinh nghiệm là Video Editor trong ngành mỹ phẩm, bắt đầu nghiên cứu và dịch chuyển sang AI
-          Video từ 05/2025.
-
+        <div class="hinfo-body"
+          data-vi="Em có hơn 3 năm kinh nghiệm là Video Editor trong ngành mỹ phẩm, bắt đầu nghiên cứu và dịch chuyển sang AI Video từ 05/2025."
+          data-en="3+ years as Video Editor in the cosmetics industry, pivoting to AI Video since May 2025.">
+          Em có hơn 3 năm kinh nghiệm là Video Editor trong ngành mỹ phẩm, bắt đầu nghiên cứu và dịch chuyển sang AI Video từ 05/2025.
         </div>
       </div>
     </div>
+
+    <button class="lang-btn" id="langBtn" onclick="toggleLang()">EN</button>
 
     <div class="divider"></div>
 
@@ -485,22 +520,19 @@
 
         <!-- KINH NGHIỆM -->
         <div class="sec">
-          <div class="sec-title">Kinh nghiệm</div>
+          <div class="sec-title" data-vi="Kinh nghiệm" data-en="Experience">Kinh nghiệm</div>
 
           <div class="exp-item">
             <div class="exp-top">
               <div class="exp-title">AI Video / Automation</div>
-              <div class="exp-period">08/2025 — Hiện tại</div>
+              <div class="exp-period" data-vi="08/2025 — Hiện tại" data-en="08/2025 — Present">08/2025 — Hiện tại</div>
             </div>
             <div class="exp-co">HV Holdings Global — BU Faca · TP.HCM</div>
             <ul class="exp-ul">
-              <li>Sản xuất video quảng cáo hoàn toàn bằng AI (Veo 3, Kling, Nano Banana Pro) — từ ý tưởng, kịch bản,
-                hình ảnh đến video final.
-              </li>
-              <li>Xây dựng workflow automation kiểm duyệt chính sách của nền tảng cho kịch bản trước khi dựng.</li>
-              <li>Xây workflow automation đăng bài cross-platform (Facebook, TikTok) với n8n, giúp team tiết kiệm thời
-                gian thao tác thủ công.</li>
-              <li>Nghiên cứu và đánh giá AI tools mới để tích hợp vào quy trình sản xuất media của team.</li>
+              <li data-vi="Sản xuất video quảng cáo hoàn toàn bằng AI (Veo 3, Kling, Nano Banana Pro) — từ ý tưởng, kịch bản, hình ảnh đến video final." data-en="Produced ad videos entirely with AI (Veo 3, Kling, Nano Banana Pro) — from concept and script to final video.">Sản xuất video quảng cáo hoàn toàn bằng AI (Veo 3, Kling, Nano Banana Pro) — từ ý tưởng, kịch bản, hình ảnh đến video final.</li>
+              <li data-vi="Xây dựng workflow automation kiểm duyệt chính sách của nền tảng cho kịch bản trước khi dựng." data-en="Built an automation workflow for platform policy compliance review before production.">Xây dựng workflow automation kiểm duyệt chính sách của nền tảng cho kịch bản trước khi dựng.</li>
+              <li data-vi="Xây workflow automation đăng bài cross-platform (Facebook, TikTok) với n8n, giúp team tiết kiệm thời gian thao tác thủ công." data-en="Built a cross-platform auto-posting workflow (Facebook, TikTok) with n8n, reducing manual work for the team.">Xây workflow automation đăng bài cross-platform (Facebook, TikTok) với n8n, giúp team tiết kiệm thời gian thao tác thủ công.</li>
+              <li data-vi="Nghiên cứu và đánh giá AI tools mới để tích hợp vào quy trình sản xuất media của team." data-en="Researched and evaluated new AI tools for integration into the team's media production pipeline.">Nghiên cứu và đánh giá AI tools mới để tích hợp vào quy trình sản xuất media của team.</li>
             </ul>
           </div>
 
@@ -511,9 +543,9 @@
             </div>
             <div class="exp-co">HV Holdings Global — BU Faca · TP.HCM</div>
             <ul class="exp-ul">
-              <li>Dựng video quảng cáo sản phẩm (Social Ads, TVC, Motion Graphics Banner).</li>
-              <li>Lên kế hoạch, đi tiền trạm bối cảnh, setup thiết bị và điều phối buổi quay diễn viên.</li>
-              <li>Phối hợp với team content để đảm bảo video đúng brief và deadline.</li>
+              <li data-vi="Dựng video quảng cáo sản phẩm (Social Ads, TVC, Motion Graphics Banner)." data-en="Edited product ad videos (Social Ads, TVC, Motion Graphics Banners).">Dựng video quảng cáo sản phẩm (Social Ads, TVC, Motion Graphics Banner).</li>
+              <li data-vi="Lên kế hoạch, đi tiền trạm bối cảnh, setup thiết bị và điều phối buổi quay diễn viên." data-en="Planned shoots, scouted locations, set up equipment and coordinated talent on set.">Lên kế hoạch, đi tiền trạm bối cảnh, setup thiết bị và điều phối buổi quay diễn viên.</li>
+              <li data-vi="Phối hợp với team content để đảm bảo video đúng brief và deadline." data-en="Collaborated with the content team to deliver videos on brief and on schedule.">Phối hợp với team content để đảm bảo video đúng brief và deadline.</li>
             </ul>
           </div>
 
@@ -528,27 +560,26 @@
 
         <!-- HỌC VẤN -->
         <div class="sec">
-          <div class="sec-title">Học vấn</div>
+          <div class="sec-title" data-vi="Học vấn" data-en="Education">Học vấn</div>
           <div class="edu-top">
             <div class="edu-name">ĐH Tài nguyên &amp; Môi trường TP.HCM</div>
             <div class="edu-year">2018 — 2022</div>
           </div>
-          <div class="edu-sub">Công nghệ Thông tin</div>
-          <!-- <div class="edu-note">Luận văn AR — 9.0/10 · học bổng cuối kỳ</div> -->
+          <div class="edu-sub" data-vi="Công nghệ Thông tin" data-en="Information Technology">Công nghệ Thông tin</div>
 
           <div class="edu-divider"></div>
 
-          <div class="sec-title">Khóa học bên ngoài</div>
+          <div class="sec-title" data-vi="Khóa học bên ngoài" data-en="External Courses">Khóa học bên ngoài</div>
           <div class="edu-top">
             <div class="edu-name">Agentic AI - WecommitAI</div>
             <div class="edu-year">04/2026</div>
           </div>
-          <div class="edu-sub">Học về cơ chế vận hành của Agentic AI và thiết kế các luồng hoạt động cho AI Agent</div>
+          <div class="edu-sub" data-vi="Học về cơ chế vận hành của Agentic AI và thiết kế các luồng hoạt động cho AI Agent" data-en="Learned about Agentic AI mechanisms and designing activity flows for AI Agents.">Học về cơ chế vận hành của Agentic AI và thiết kế các luồng hoạt động cho AI Agent</div>
           <div class="edu-top" style="margin-top:6px">
             <div class="edu-name">AI Content - Hai Nghiem Social</div>
             <div class="edu-year">10/2025</div>
           </div>
-          <div class="edu-sub">Học về quy trình Master Prompt để làm video AI.</div>
+          <div class="edu-sub" data-vi="Học về quy trình Master Prompt để làm video AI." data-en="Learned the Master Prompt process for AI video production.">Học về quy trình Master Prompt để làm video AI.</div>
         </div>
 
       </div><!-- /left -->
@@ -558,10 +589,10 @@
 
         <!-- LIÊN HỆ -->
         <div class="sec">
-          <div class="sec-title">Liên hệ</div>
+          <div class="sec-title" data-vi="Liên hệ" data-en="Contact">Liên hệ</div>
           <div class="ci"><span class="ci-key">Email</span>truongnhat2905@gmail.com</div>
           <div class="ci"><span class="ci-key">Phone</span>0379 137 483</div>
-          <div class="ci"><span class="ci-key">Địa điểm</span>TP. Hồ Chí Minh</div>
+          <div class="ci"><span class="ci-key" data-vi="Địa điểm" data-en="Location">Địa điểm</span>TP. Hồ Chí Minh</div>
           <div class="ci"><span class="ci-key">Portfolio</span><a
               href="https://truongnhat2905.github.io/video-portfolio/ai-video.html" target="_blank">link portfolio</a>
           </div>
@@ -589,7 +620,7 @@
 
         <!-- PHẦN MỀM -->
         <div class="sec">
-          <div class="sec-title">Phần mềm</div>
+          <div class="sec-title" data-vi="Phần mềm" data-en="Software">Phần mềm</div>
           <div class="eq-item">Premiere Pro</div>
           <div class="eq-item">After Effects</div>
           <div class="eq-item">CapCut</div>
@@ -602,6 +633,18 @@
     </div><!-- /body -->
 
   </div><!-- /page -->
+
+  <script>
+    var lang = 'vi';
+    function toggleLang() {
+      lang = lang === 'vi' ? 'en' : 'vi';
+      var btn = document.getElementById('langBtn');
+      btn.textContent = lang === 'vi' ? 'EN' : 'VI';
+      document.querySelectorAll('[data-vi]').forEach(function (el) {
+        el.textContent = lang === 'vi' ? el.getAttribute('data-vi') : el.getAttribute('data-en');
+      });
+    }
+  </script>
 </body>
 
 </html>
